@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customers | Hire Purchase Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="libs/CSS/customer.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="index.html">Hire Purchase</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="customer.html">Customers</a></li>
+        <li class="nav-item"><a class="nav-link" href="group.html">Group/Institution</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Access</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="user.html">Users</a></li>
+            <li><a class="dropdown-item" href="roles.html">Roles</a></li>
+          </ul>
+        </li>
+         <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Stock</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Inventory</a></li>
+            <li><a class="dropdown-item" href="#">Supplier</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto me-3">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+            <span class="rounded-circle bg-light text-primary p-2 d-flex justify-content-center align-items-center" style="width: 35px; height: 35px;">
+              <i class="bi bi-person-fill"></i>
+            </span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Section -->
+<div class="container border bg-dark bg-opacity-50 border-success border-opacity-25 mt-5 rounded-top">
+  <h2 class="text-white">Customers</h2>
+</div>
+<div class="container border border-success border-opacity-25">
+  <br><br>
+  <div class="d-flex justify-content-center mb-3">
+    <form class="d-flex" role="search" style="width: 50%;">
+      <input class="form-control me-1" type="search" placeholder="Search here" aria-label="Search">
+      <button class="btn btn-outline-success col-auto" type="submit">Search <i class="bi bi-search"></i></button>
+    </form>
+  </div>
+  <br>
+  <hr class="text-success">
+  <div class="d-flex flex-row mb-3">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#customerModal">Add Customer <i class="bi bi-person-plus"></i></button>
+  </div>
+  <hr class="text-success">
+  <br>
+  <h5 class="text-dark-emphasis">Customer Table</h5>
+  <table class="table table-bordered table-hover shadow-sm">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Member Code</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Group</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="customerTableBody"></tbody>
+  </table>
+</div>
+
+<!-- Modal Form -->
+<div class="modal fade" id="customerModal" tabindex="-1" aria-labelledby="customerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="customerForm">
+        <div class="modal-header bg-primary">
+          <h5 class="modal-title text-white" id="customerModalLabel">Add Customer</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body row g-3">
+          <input type="hidden" id="customerId">
+
+          <div class="col-md-6">
+            <label class="form-label">Group (Institution)</label>
+            <select class="form-select" id="groupSelect">
+              <option value="">Select Group</option>
+              <option value="Norbus">Norbus</option>
+              <option value="CISCO">CISCO</option>
+            </select>
+          </div>
+
+          <div class="col-md-6"><label class="form-label">Firstname</label><input type="text" class="form-control" id="firstname" required></div>
+          <div class="col-md-6"><label class="form-label">Lastname</label><input type="text" class="form-control" id="lastname" required></div>
+          <div class="col-md-6"><label class="form-label">Date of Birth</label><input type="date" class="form-control" id="dob"></div>
+          <div class="col-md-6"><label class="form-label">National ID</label><input type="text" class="form-control" id="nid"></div>
+          <div class="col-md-6"><label class="form-label">ID Issue Date</label><input type="date" class="form-control" id="idIssue"></div>
+          <div class="col-md-6"><label class="form-label">ID Expiry Date</label><input type="date" class="form-control" id="idExpiry"></div>
+          <div class="col-md-12"><label class="form-label">Residential Address</label><textarea class="form-control" id="resAddress" rows="2"></textarea></div>
+          <div class="col-md-12"><label class="form-label">Postal Address</label><textarea class="form-control" id="postAddress" rows="2"></textarea></div>
+          <div class="col-md-6"><label class="form-label">Mobile No.</label><input type="tel" class="form-control" id="mobile" required></div>
+          <div class="col-md-6"><label class="form-label">Email</label><input type="email" class="form-control" id="email" required></div>
+          <div class="col-md-6"><label class="form-label">Member Code</label><input type="text" class="form-control" id="memberCode" readonly></div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- View Customer Modal -->
+<div class="modal fade" id="viewCustomerModal" tabindex="-1" aria-labelledby="viewCustomerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-light">
+      <div class="modal-header bg-primary">
+        <h5 class="modal-title text-white" id="viewCustomerModalLabel">View Customer Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Member Code:</strong> <span id="viewMemberCode"></span></p>
+        <p><strong>Firstname:</strong> <span id="viewFirstname"></span></p>
+        <p><strong>Lastname:</strong> <span id="viewLastname"></span></p>
+        <p><strong>Date of Birth:</strong> <span id="viewDob"></span></p>
+        <p><strong>National ID:</strong> <span id="viewNid"></span></p>
+        <p><strong>ID Issue Date:</strong> <span id="viewIdIssue"></span></p>
+        <p><strong>ID Expiry Date:</strong> <span id="viewIdExpiry"></span></p>
+        <p><strong>Residential Address:</strong> <span id="viewResAddress"></span></p>
+        <p><strong>Postal Address:</strong> <span id="viewPostAddress"></span></p>
+        <p><strong>Mobile:</strong> <span id="viewMobile"></span></p>
+        <p><strong>Email:</strong> <span id="viewEmail"></span></p>
+        <p><strong>Group:</strong> <span id="viewGroup"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="libs/JS/customer.js"></script>
+</body>
+</html>
