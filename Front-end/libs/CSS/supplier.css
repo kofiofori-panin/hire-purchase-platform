@@ -1,0 +1,100 @@
+/* General page styling */
+body {
+  background-color: #f4f6f9;
+  color: #2e2e2e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0d6efd;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .dropdown-toggle {
+  color: white !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .dropdown-menu a:hover {
+  color: #f4623a !important;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  background-color: white;
+}
+
+.dropdown-menu a {
+  color: #2e2e2e;
+}
+
+/* Section header */
+.container.bg-dark.bg-opacity-50 {
+  background-color: #0d6efd !important;
+  opacity: 1;
+}
+
+.container > h2,
+.container > h5 {
+  color: #0d6efd;
+}
+
+/* Buttons */
+.btn-success {
+  background-color: #f4623a;
+  border-color: #f4623a;
+}
+
+.btn-success:hover {
+  background-color: #d94e28;
+  border-color: #d94e28;
+}
+
+.btn-outline-success {
+  color: #f4623a;
+  border-color: #f4623a;
+}
+
+.btn-outline-success:hover {
+  background-color: #f4623a;
+  color: white;
+}
+
+/* Table */
+.table-dark {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+/* Form */
+.form-label {
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+/* Modal */
+.modal-content {
+  border: 1px solid #dee2e6;
+}
+
+.modal-header {
+  background-color: #f4f6f9;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+/* View Modal */
+.modal-content.bg-light {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d3e2;
+}
+

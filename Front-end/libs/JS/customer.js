@@ -92,7 +92,7 @@ function deleteCustomer(index) {
   }
 }
 
-// Handle Submit with Spinner Simulation
+// Submit with Spinner Simulation
 $customerForm.on("submit", function (e) {
   e.preventDefault();
   $(".btn-primary", this)
@@ -127,10 +127,10 @@ $customerForm.on("submit", function (e) {
     $customerModal.hide();
     $(".btn-primary", this).html("Save").prop("disabled", false);
     $("#customerModalLabel").text("Add Customer");
-  }, 1000);
+  }, 1500);
 });
 
-// Bind "Add Customer" button manually
+// "Add Customer" manually
 $(document).ready(() => {
   $("button[data-bs-target='#customerModal']").on("click", () => openCustomerModal(false));
 });
